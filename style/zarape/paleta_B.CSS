@@ -7,6 +7,13 @@
     color: #000000;
 
 }
+body {
+    background-image: url('../img/icon.png');
+    background-size: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 .bg-citrus {
     background-color: #FAAF08;
 }

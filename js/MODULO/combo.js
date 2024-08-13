@@ -4,59 +4,153 @@
  * Fecha: Lunes 08, Julio 2024
  * Descripción: funcion para el modulo de combos de la aplicacion
  ***********************************************************/
-
-let alimentosybebidas = [
-    { id: 1, nombre: "Tacos" },
-    { id: 2, nombre: "Taparterias" },
-    { id: 3, nombre: "Ensalada Mediterránea" },
-    { id: 4, nombre: "Dieta Tropical" },
-    { id: 5, nombre: "Pasta Cantonesa" },
-    { id: 6, nombre: "Coca-Cola" },
-    { id: 7, nombre: "Café" },
-    { id: 8, nombre: "Agua de Sabor" },
-    { id: 9, nombre: "Jugo de Naranja" },
-    { id: 10, nombre: "Té" }
-];
-
 let combos = [
     {
-        id: 1,
-        nombre: "Tacos y Nachos",
-        descripcion: "Muy ricos",
-        foto: "",
-        precio: 150.00,
-        alimentosybebidas: [
-            { id: 2, nombre: "Taparterias" },
-            { id: 6, nombre: "Coca-Cola" }
-        ]
+        "id": 1,
+        "nombre": "Tacos y Nachos",
+        "descripcion": "Muy ricos",
+        "foto": "",
+        "precio": 150.00,
+        "bebida": {
+            "id": 1,
+            "nombre": "Coca-Cola"
+        },
+        "alimentos": {
+            "id": 1,
+            "nombre": "Tacos"
+        }
     },
     {
-        id: 2,
-        nombre: "Combo 2",
-        descripcion: "Muy buen combo",
-        foto: "",
-        precio: 125.00,
-        alimentosybebidas: [
-            { id: 1, nombre: "Tacos" },
-            { id: 8, nombre: "Agua de Sabor" }
-        ]
+        "id": 2,
+        "nombre": "Burritos",
+        "descripcion": "Deliciosos",
+        "foto": "",
+        "precio": 180.00,
+        "bebida": {
+            "id": 1,
+            "nombre": "Coca-Cola"
+        },
+        "alimentos": {
+            "id": 1,
+            "nombre": "Tacos"
+        }
     },
     {
-        id: 3,
-        nombre: "Combo Tropical",
-        descripcion: "Combo para un buen viaje",
-        foto: "",
-        precio: 150.00,
-        alimentosybebidas: [
-            { id: 4, nombre: "Dieta Tropical" },
-            { id: 9, nombre: "Jugo de Naranja" }
-        ]
+        "id": 3,
+        "nombre": "Enchiladas",
+        "descripcion": "Tradicionales",
+        "foto": "",
+        "precio": 120.00,
+        "bebida": {
+            "id": 2,
+            "nombre": "Fanta"
+        },
+        "alimentos": {
+            "id": 2,
+            "nombre": "Nachos"
+        }
+    },
+    {
+        "id": 4,
+        "nombre": "Hamburguesa y Papas",
+        "descripcion": "Para los amantes de la comida rápida",
+        "foto": "",
+        "precio": 200.00,
+        "bebida": {
+            "id": 3,
+            "nombre": "Sprite"
+        },
+        "alimentos": {
+            "id": 3,
+            "nombre": "Hamburguesas"
+        }
+    },
+    {
+        "id": 5,
+        "nombre": "Pizza y Refresco",
+        "descripcion": "La combinación perfecta",
+        "foto": "",
+        "precio": 250.00,
+        "bebida": {
+            "id": 4,
+            "nombre": "Pepsi"
+        },
+        "alimentos": {
+            "id": 4,
+            "nombre": "Pizza"
+        }
+    },
+    {
+        "id": 6,
+        "nombre": "Ensalada y Agua",
+        "descripcion": "Opción saludable",
+        "foto": "",
+        "precio": 100.00,
+        "bebida": {
+            "id": 5,
+            "nombre": "Mountain Dew"
+        },
+        "alimentos": {
+            "id": 5,
+            "nombre": "Ensalada"
+        }
+    }
+];
+
+let bebidas = [
+    {
+        "id": 1,
+        "nombre": "Coca-Cola"
+    },
+    {
+        "id": 2,
+        "nombre": "Fanta"
+    },
+    {
+        "id": 3,
+        "nombre": "Sprite"
+    },
+    {
+        "id": 4,
+        "nombre": "Pepsi"
+    },
+    {
+        "id": 5,
+        "nombre": "Mountain Dew"
+    }
+];
+
+let alimentos = [
+    {
+        "id": 1,
+        "nombre": "Tacos"
+    },
+    {
+        "id": 2,
+        "nombre": "Nachos"
+    },
+    {
+        "id": 3,
+        "nombre": "Hamburguesas"
+    },
+    {
+        "id": 4,
+        "nombre": "Pizza"
+    },
+    {
+        "id": 5,
+        "nombre": "Ensalada"
+    },
+    {
+        "id": 6,
+        "nombre": "Sushi"
     }
 ];
 
 export function inicializarModulo() {
     setDetalleComboVisible(false);
-    llenarComboBoxCategoriasC();
+    llenarComboBoxCategoriasB();
+    llenarComboBoxCategoriasA();
     llenarTabla();
 }
 
@@ -67,7 +161,8 @@ export function limpiar() {
     document.getElementById("txtCombo").value = '';
     document.getElementById("txtDescripcionCombo").value = '';
     document.getElementById("txtPrecioCombo").value = '';
-    document.getElementById("cmbCategoriaC").value = 1;
+    document.getElementById("cmbCategoriaB").value = 1;
+    document.getElementById("cmbCategoriaA").value = 1;
 }
 
 export function consultar() {
@@ -81,7 +176,7 @@ export function consultar() {
                 '<td>' + combos[i].nombre + '</td>' +
                 '<td>' + combos[i].descripcion + '</td>' +
                 '<td class="">' + combos[i].precio + '</td>' +
-                '<td><a href="#" class="text-info" onclick="mostrarDetalleCombo(' + combos[i].id + ');"><i class="fas fa-eye"></i></a>' + '</td>' +
+                '<td><button class="btn btn-warning btn-sm" onclick="cm.mostrarDetalleCombo(' + combos[i].id + ')"><i class="fas fa-edit"></i> Editar</button></td>' +
                 '</tr>';
             encontrado = true;
         }
@@ -110,6 +205,8 @@ export function mostrarDetalleCombo(idCombo) {
     document.getElementById("txtCombo").value = combo.nombre;
     document.getElementById("txtDescripcionCombo").value = combo.descripcion;
     document.getElementById("txtPrecioCombo").value = combo.precio;
+    document.getElementById("cmbCategoriaB").value = combo.bebida.id;
+    document.getElementById("cmbCategoriaA").value = combo.alimentos.id;
     setDetalleComboVisible(true);
 }
 
@@ -133,17 +230,30 @@ function llenarTabla() {
     document.getElementById("tbodyCombo").innerHTML = contenido;
 }
 
-function llenarComboBoxCategoriasC() {
+function llenarComboBoxCategoriasB() {
     let contenido = '';
 
-    for (let i = 0; i < alimentosybebidas.length; i++) {
-        contenido += '<option value="' + alimentosybebidas[i].id + '">' +
-            alimentosybebidas[i].nombre +
+    for (let i = 0; i < bebidas.length; i++) {
+        contenido += '<option value="' + bebidas[i].id + '">' +
+            bebidas[i].nombre +
             '</option>';
     }
 
-    document.getElementById('cmbCategoriaC').innerHTML = contenido;
+    document.getElementById('cmbCategoriaB').innerHTML = contenido;
 }
+
+function llenarComboBoxCategoriasA() {
+    let contenido = '';
+
+    for (let i = 0; i < alimentos.length; i++) {
+        contenido += '<option value="' + alimentos[i].id + '">' +
+            alimentos[i].nombre +
+            '</option>';
+    }
+
+    document.getElementById('cmbCategoriaA').innerHTML = contenido;
+}
+
 
 
 function buscarPosicionComboPorID(idCombo) {
@@ -214,7 +324,14 @@ export function guardarCombo() {
         nombre: nombre,
         descripcion: descripcion,
         precio: precio,
-        alimentosybebidas: []
+        bebida: {
+            id: parseInt(document.getElementById("cmbCategoriaB").value),
+            nombre: bebidas.find(b => b.id === parseInt(document.getElementById("cmbCategoriaB").value)).nombre
+        },
+        alimentos: {
+            id: parseInt(document.getElementById("cmbCategoriaA").value),
+            nombre: alimentos.find(a => a.id === parseInt(document.getElementById("cmbCategoriaA").value)).nombre
+        }
     };
 
     // Verificar si se va a insertar o actualizar:
