@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>principal page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap-utilities.min.css">
+        <link rel="stylesheet" href="style/zarape/paleta_B.CSS">
+
+    </head>
+    <body>
+        <nav class="nav navbar-expand zarape-menu">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                    <img src="style/img/icon.png" alt="" style="width: 50%">    
+                </li>
+                    <li class="nav-item ms-2">
+                        <a class="nav-link ps-2 pe-2" href="#" onclick="cargarModuloUsuario()">Usuarios</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="nav-link ps-2 pe-2" href="#" onclick="cargarModuloSucursal()">Sucursal</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="nav-link ps-2 pe-2" href="#" onclick="cargarModuloAlimento()">Alimentos</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="nav-link ps-2 pe-2" href="#" onclick="cargarmodulobebida()">Bebidas</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="nav-link ps-2 pe-2" href="#" onclick="cargarModuloCombo()">Combos</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="nav-link ps-2 pe-2" href="#" onclick="cargarModuloPagos()">Pagos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="contenedorPrincipal" class="container-fluid">
+        </div>
+        <script src="style/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="style/sweetalert2.all.min.js"></script>
+        <script src="style/fontawesome-free-6.4.0-web/js/all.js"></script>
+        <script src="js/principal.js"></script>
+    </body>

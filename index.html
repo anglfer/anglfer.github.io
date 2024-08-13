@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+  Archivo: index.html
+  Autor: Mariana Cortes
+  Fecha: Lunes 08, Julio 2024
+  Descripción: Página de inicio de sesión para EL ZARAPE.
+-->
+<html>
+    <head>
+        <title>LOGEO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#1885ed">
+        <meta name="author" content="Mariana Cortes"/>
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap-utilities.min.css">
+        <link rel="stylesheet" href="style/zarape/style.css">
+    </head>
+    <body>
+        <!-- Contenedor del logo y título -->
+        <div class="logo-container">
+            <h1>EL ZARAPE</h1>
+        </div>
+        
+        <!-- Anillo animado -->
+        <div class="ring">
+            <i style="--clr:#FA4032;"></i>
+            <i style="--clr:#FAAF08;"></i>
+            <i style="--clr:#FA812F;"></i>
+            
+            <!-- Formulario de inicio de sesión -->
+            <div class="login">
+                <h2>Inicia sesión</h2>
+                <div class="inputBx">
+                    <input type="text" id="username" placeholder="Nombre de usuario">
+                </div>
+                <div class="inputBx">
+                    <input type="password" id="password" placeholder="Contraseña">
+                </div>
+                <div class="inputBx">
+                    <a href="#" onclick="validarUsuario();" class="button">INICIAR SESIÓN</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scripts al final para mejorar el rendimiento -->
+        <script src="style/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="js/login.js"></script>
+    </body>
+</html>
