@@ -1,0 +1,122 @@
+<!--
+ * Script: Modulo de combos
+ * Autor: Fernando Oñate
+ * Fecha: Lunes 08, Julio 2024
+-->
+<div id="divDetalleCombo" class="row justify-content-center text-center mt-2 custom-card">
+    <div class="col-12">
+        <div class="card custom-card">
+            <div class="card-header custom-card-header text-center">
+                <span class="h4 fuente-ComicSans">Detalle del Combo</span>
+                <button class="btn btn-outline-danger float-end"
+                        onclick="cm.setDetalleComboVisible(false);">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div id="alertContainer" style="position: fixed; top: 20px; right: 20px; z-index: 1000;"></div>
+                    <div class="col-2 mb-4">
+                        <div class="form-floating">
+                            <input id="txtIdCombo" type="text" name="name" class="form-control" placeholder="ID" readonly/>
+                            <label for="txtIdCombo" class="form-label fuente-ArialBlack">Id producto</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 ">
+                        <div class="form-floating">
+                            <input id="txtCombo" type="text" name="name" class="form-control" placeholder="Nombre de alimento:">
+                            <label for="txtCombo" class="form-label fuente-ArialBlack">Nombre del combo:</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating">                                         
+                            <input id="txtDescripcionCombo" type="text" name="name" class="form-control" placeholder="Descripción:">
+                            <label for="txtDescripcionCombo" class="form-label fuente-ArialBlack" >Descripción:</label>
+                        </div>
+                    </div>
+                    <div class="col-4 ">
+                        <div class="form-floating">
+                            <input id="txtPrecioCombo" type="text" class="form-control" placeholder="Precio: $"/>                                    
+                            <label for="txtPrecioCombo" class="form-label fuente-ArialBlack">Precio:</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">                                
+                    <div class="col-5 mt-2 m-4 ">
+                        <div class="form-floating">
+                            <select id="cmbCategoriaC" class="form-select" aria-label="Default select example">                                
+                            </select>
+                            <label class="form-label fuente-ArialBlack">Bebida</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mx-auto ">
+                        <div class="btn-group m-2" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" 
+                                    class="btn btn-primary"
+                                    onclick="cm.guardarCombo();">
+                                <i class="fas fa-save me-2"></i>
+                                Guardar
+                            </button>
+                        </div>
+                        <div class="btn-group col-1 m-2" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn btn-danger" onclick="cm.eliminarCombo();">
+                                <i class="fas fa-trash"></i>
+                                Eliminar
+                            </button>
+                        </div>
+                        <div class="btn-group col-1 m-2" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn btn-success">
+                                <i class="fas fa-broom"></i>
+                                Limpiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>               
+</div>
+<div id="divCatalogoCombo" class="row mt-2">
+    <div class="col-12">
+        <div class="card custom-card">
+            <div class="card-header custom-card-header text-center">
+                <span class="h3 fuente-ComicSans">Catálogo de Combos</span>
+                <button class="btn btn-outline-danger float-end"
+                        onclick="cm.mostrarFormularioNuevoCombo();">
+                    <i class="fas fa-plus me-2"></i>
+                    Nuevo
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control fuente-ArialBlack" placeholder="Buscar combo" id="txtBuscar" aria-label="Buscar combo" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="cm.consultar()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div>
+                            <table class="table table-hover fuente-ArialBlack">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyCombo">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

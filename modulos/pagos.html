@@ -1,0 +1,124 @@
+<div class="container mt-5">
+    <!-- Sección de detalles del pago -->
+    <div id="paymentDetails" class="row mt-2" style="display: none;">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="fuente-ComicSans">Detalles del Pago</h4>
+                    <button class="btn btn-outline-danger float-end" onclick="cm.hidePaymentDetails()">
+                        <i class="fas fa-times"></i> Cerrar
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-2 mb-4">
+                            <div class="form-floating">
+                                <input id="paymentId" type="text" class="form-control" placeholder="ID" readonly/>
+                                <label for="paymentId" class="fuente-ArialBlack">ID Pago</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input id="cardNumber" type="text" class="form-control" placeholder="Número de tarjeta"/>
+                                <label for="cardNumber" class="fuente-ArialBlack">Número de Tarjeta</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input id="cardHolder" type="text" class="form-control" placeholder="Nombre del titular"/>
+                                <label for="cardHolder" class="fuente-ArialBlack">Nombre del Titular</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input id="expiryMonth" type="text" class="form-control" placeholder="Mes de vencimiento"/>
+                                <label for="expiryMonth" class="fuente-ArialBlack">Mes de Vencimiento</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input id="expiryYear" type="text" class="form-control" placeholder="Año de vencimiento"/>
+                                <label for="expiryYear" class="fuente-ArialBlack">Año de Vencimiento</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input id="securityCode" type="text" class="form-control" placeholder="Código de seguridad"/>
+                                <label for="securityCode" class="fuente-ArialBlack">Código de Seguridad</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input id="paymentStatus" type="text" class="form-control" placeholder="Estatus"/>
+                                <label for="paymentStatus" class="fuente-ArialBlack">Estatus del Pago</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input id="paymentAmount" type="text" class="form-control" placeholder="Cantidad"/>
+                                <label for="paymentAmount" class="fuente-ArialBlack">Cantidad</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mx-auto">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-primary" onclick="cm.savePayment()">
+                                    <i class="fas fa-save"></i> Guardar
+                                </button>
+                                <button type="button" class="btn btn-danger" onclick="cm.deletePayment()">
+                                    <i class="fas fa-trash"></i> Eliminar
+                                </button>
+                                <button type="button" class="btn btn-secondary" onclick="cm.clearPaymentDetails()">
+                                    Limpiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>               
+    </div>
+    
+    <!-- Sección de listado de pagos -->
+    <div id="paymentList" class="row mt-2">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="fuente-ComicSans">Lista de Pagos</h4>
+                    <button class="btn btn-primary float-end" onclick="cm.showPaymentDetails()">
+                        <i class="fas fa-plus"></i> Agregar Pago
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control fuente-ArialBlack" placeholder="Buscar por ID o nombre del titular" id="searchInput">
+                        <button class="btn btn-outline-secondary fuente-ArialBlack" type="button" id="searchButton">Buscar</button>
+                    </div>
+                    <table class="table table-hover fuente-ArialBlack">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre del Titular</th>
+                                <th>Fecha de Vencimiento</th>
+                                <th>Cantidad</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="paymentTableBody">
+                            <!-- Los pagos se renderizarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

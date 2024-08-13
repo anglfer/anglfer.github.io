@@ -1,0 +1,178 @@
+/***********************************************************
+ * Script: Estilos para Página de Inicio de Sesión
+ * Autor: [Nombre del Autor]
+ * Fecha: [Fecha]
+ * Descripción: Estilos para la página de inicio de sesión de EL ZARAPE.
+***********************************************************/
+
+/* Importación de la fuente Quicksand desde Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+/* Estilos del cuerpo (body) */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #FAAF08, #FA812F);
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Estilos del contenedor del logo */
+.logo-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-container h1 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 7em;
+    color: #fff;
+    margin-right: 200px; /* Espacio adicional a la derecha del logo */
+}
+
+/* Estilos del anillo animado */
+.ring {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ring i {
+    position: absolute;
+    inset: 0;
+    border: 2px solid #fff;
+    transition: 0.5s;
+}
+
+.ring i:nth-child(1) {
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: animate 6s linear infinite; /* Animación del primer ícono */
+}
+
+.ring i:nth-child(2) {
+    border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+    animation: animate 4s linear infinite; /* Animación del segundo ícono */
+}
+
+.ring i:nth-child(3) {
+    border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+    animation: animate2 10s linear infinite; /* Animación del tercer ícono */
+}
+
+/* Efecto de hover sobre el anillo */
+.ring:hover i {
+    border: 6px solid var(--clr);
+    filter: drop-shadow(0 0 20px var(--clr));
+}
+
+/* Animación de rotación */
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Segunda animación de rotación */
+@keyframes animate2 {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Estilos del formulario de inicio de sesión */
+.login {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre elementos del formulario */
+}
+
+.login h2 {
+    font-size: 2em;
+    color: #fff;
+}
+
+/* Estilos de los campos de entrada */
+.login .inputBx {
+    position: relative;
+    width: 100%;
+}
+
+.login .inputBx input {
+    position: relative;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    font-size: 1.2em;
+    color: #fff;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Estilos del botón de inicio de sesión */
+.login a.button {
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient(45deg, #FA4032, #FA812F);
+    border: none;
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    color: #fff;
+    box-shadow: none;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+/* Estilos del botón de inicio de sesión al pasar el mouse */
+.login a.button:hover {
+    background: linear-gradient(45deg, #FA812F, #FA4032);
+}
+
+/* Estilos del placeholder de los campos de entrada */
+.login .inputBx input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Estilos de los enlaces adicionales */
+.login .links {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.login .links a {
+    color: #fff;
+    text-decoration: none;
+}

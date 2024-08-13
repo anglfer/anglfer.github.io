@@ -1,0 +1,93 @@
+.zarape-menu{
+    background-color: #fef3e2;
+    color: #000000;
+}
+.zarape-menu a:hover{
+    background-color: #fa812f;
+    color: #000000;
+
+}
+.bg-citrus {
+    background-color: #FAAF08;
+}
+.bg-grapefruit {
+    background-color: #FA812F;
+}
+.citrus{
+    color: #faaf08;
+}
+.grapefruit{
+    color: #fa812f;
+}
+
+.ruby{
+    color: #fa4032 ;
+}
+.whitt{
+    color: #fef3e2;
+}
+body {
+    background-color: #fef3e2;
+    color: #fa4032;
+}
+
+.text-title {
+    color: #faaf08;
+}
+
+
+
+.custom-card-header {
+    background-color: #fa812f;
+    color: white;
+}
+
+.form-floating input, .form-floating select, .input-group input {
+    background-color: #fef3e2;
+    color: #fa4032;
+    border: 1px solid #fa812f;
+}
+
+.form-floating .form-label {
+    color: #fa812f;
+}
+
+.btn-primary {
+    background-color: #faaf08;
+    border-color: #faaf08;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #fa4032;
+    border-color: #fa4032;
+    color: white;
+}
+
+.btn-success {
+    background-color: #fa812f;
+    border-color: #fa812f;
+    color: white;
+}
+
+.table thead {
+    background-color: #fa812f;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: #faaf08;
+    color: white;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #faaf08;
+}
+
+.fuente-ArialBlack {
+    font-family: 'Arial Black', sans-serif;
+}
+
+.fuente-ComicSans {
+    font-family: 'Comic Sans MS', cursive;
+}

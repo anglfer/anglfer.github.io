@@ -1,0 +1,131 @@
+<!--
+ * Script: Modulo de Alimentos
+ * Autor: Fernando Oñate
+ * Fecha: Lunes 08, Julio 2024
+-->
+<div id="divDetalleAlimento" class="row justify-content-center  text-center mt-2">
+    <div class="col-12">
+        <div class="card custom-card">
+            <div class="card-header text-center bg-grapefruit custom-card-header">
+                <span class="h4 fuente-ComicSans">Detalle del Alimento</span>
+                <button class="btn btn-outline-danger float-end"
+                        onclick="cm.setDetalleAlimentoVisible(false);">
+                        <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div id="alertContainer" style="position: fixed; top: 20px; right: 20px; z-index: 1000;"></div>
+                    <div class="col-2 mb-4">
+                        <div class="form-floating">
+                            <input id="txtId" type="text" name="name"  class="form-control" placeholder="ID" readonly/>
+                            <label for="txtId" class="form-label fuente-ArialBlack">Id producto</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 ">
+                        <div class="form-floating">
+                            <input id="txtAlimento" type="text" name="name" class="form-control" placeholder="Nombre de alimento:">
+                            <label for="txtAlimento" class="form-label fuente-ArialBlack">Nombre del alimento:</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating">                                         
+                            <input id="txtDescripcionAlimento" type="text" name="name" class="form-control" placeholder="Descripci&oacute;n:">
+                            <label for="txtDescripcionAlimento" class="form-label fuente-ArialBlack" >Descripci&oacute;n</label>
+                        </div>
+                    </div>
+                    <div class="col-4 ">
+                        <div class="form-floating">
+                            <input id="txtPrecioAlimento" type="text" class="form-control" placeholder="Precio: $"/>                                    
+                            <label for="txtPrecioAlimento" class="form-label fuente-ArialBlack">Precio:</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">                                "
+                    <div class="col-5 mt-2 m-4 ">
+                        <div class="form-floating">
+                            <select id="cmbCategoria" class="form-select" aria-label="Default select example">                                
+                            </select>
+                            <label class="form-label fuente-ArialBlack">Categoria</label>
+                        </div>
+                    </div>
+                    <div class="col-6  mt-2 m-3">
+                        <label class="form-label fuente-ArialBlack">Foto</label>
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="inputGroupFile02">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mx-auto ">
+                        <div class="btn-group m-2" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" 
+                                    class="btn btn-primary"
+                                    onclick="cm.guardar();">
+                                <i class="fas fa-save me-2"></i>
+                                Guardar
+                            </button>
+                        </div>
+                        <div class="btn-group col-1 m-2" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn btn-danger" onclick="cm.eliminar()">
+                                <i class="fas fa-trash"></i>
+                                Eliminar
+                            </button>
+                        </div>
+                        <div class="btn-group col-1 m-2" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn btn-success" onclick="cm.limpiar()">
+                                <i class="fas fa-broom"></i>
+                                Limpiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>               
+</div>
+<div id="divCatalogoAlimentos" class="row mt-2">
+    <div class="col-12">
+        <div class="card custom-card">
+            <div class="card-header custom-card-header text-center">
+                <span class="h3 fuente-ComicSans">Cat&aacute;logo de Alimentos</span>
+                <button class="btn btn-outline-danger float-end"
+                        onclick="cm.mostrarFormularioNuevo();">
+                    <i class="fas fa-plus me-2"></i>
+                    Nuevo
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control fuente-ArialBlack" placeholder="Buscar alimento" id="txtBuscar" aria-label="Buscar alimento" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="cm.consultar()">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div>
+                            <table class="table table-hover fuente-ArialBlack">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Categor&iacute;a</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyAlimentos">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
