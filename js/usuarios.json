@@ -1,0 +1,22 @@
+[
+  {
+    "username": "innovatech",
+    "password": "1234",
+    "tipo": "admin"
+  },
+  {
+    "username": "admin",
+    "password": "1234",
+    "tipo": "admin"
+  },
+  {
+    "username": "user1",
+    "password": "password1",
+    "tipo": "user"
+  },
+  {
+    "username": "user2",
+    "password": "password2",
+    "tipo": "user"
+  }
+]
