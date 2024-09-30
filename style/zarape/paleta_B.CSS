@@ -8,9 +8,9 @@
 
 }
 body {
-    background-image: url('../img/icon.png');
+    background-image: url('../img/logo.jpg');
     background-size: 50%;
-    background-position: center center;
+    background-position: top center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
